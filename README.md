@@ -1,12 +1,16 @@
-# React + Vite
+# 🎵 Spotify Clone (Frontend Only)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based Spotify-inspired music player UI built as a learning project following a YouTube tutorial.  
+This project focuses purely on the **frontend** — there’s no backend or API integration.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- 🎨 **Modern UI** inspired by Spotify  
+- 📂 **Multiple pages/components** (Home, Playlist, Player, Sidebar, etc.)  
+- 🎵 **Dummy song data** for UI demonstration  
+- 📱 Responsive design for mobile and desktop  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+- **React.js** (Vite)  
+- **JavaScript (ES6+)**  
+- **CSS** for styling  
+- **Assets** (images & icons)
