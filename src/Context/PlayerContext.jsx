@@ -9,6 +9,8 @@ const PlayerContextProvider = (props) => {
     const audioRef = useRef();
     const seekBg = useRef();
     const seekBar = useRef();
+    const volumeBar = useRef();
+    const previousVolume = useRef(1);
 
     const [track, setTrack] = useState(songsData[0]);
     const [playStatus, setPlayStatus] = useState(false);
@@ -37,7 +39,6 @@ const PlayerContextProvider = (props) => {
         await setTrack(songsData[id]);
         await audioRef.current.play();
         setPlayStatus(true);
-
     }
 
     const previous = async ()=>{
@@ -58,6 +59,21 @@ const PlayerContextProvider = (props) => {
 
     const seekSong = async (e)=> {
         audioRef.current.currentTime = ((e.nativeEvent.offsetX/seekBg.current.offsetWidth)*audioRef.current.duration);
+    }
+
+    const setVolume = async (e) => {
+        const newVolume = e.nativeEvent.offsetX / volumeBar.current.offsetWidth;
+        audioRef.current.volume = newVolume;
+    }
+
+    const toggleMute = () => {
+        if (audioRef.current.volume > 0) {
+            previousVolume.current = audioRef.current.volume; // Remember current volume
+            audioRef.current.volume = 0; // Mute
+        }
+        else {
+            audioRef.current.volume = previousVolume.current; // Restore previous volume
+        }
     }
 
     useEffect(() => {
@@ -94,7 +110,10 @@ const PlayerContextProvider = (props) => {
         playWithId,
         previous,
         next,
-        seekSong
+        seekSong,
+        setVolume,   
+        volumeBar,
+        toggleMute
     }
 
     return (

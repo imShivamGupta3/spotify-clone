@@ -20,7 +20,7 @@ const Display = () => {
         else{
             displayRef.current.style.background = `#121212` ;
         }
-    })
+    } , [location, bgColor])
 
 
   return (
